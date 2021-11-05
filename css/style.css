@@ -1,0 +1,223 @@
+/*общие стили*/
+* {                        /* *-вообще любой html на странице*/
+  box-sizing: border-box; /*чтобы наши падинги не влияли на внешние размеры элемента и чтобы падинги брались за счет внутреннего размера*/
+}
+
+a {
+  text-decoration: none;  /*ни одна ссылка не имеет никакого подчеркивания или бордера*/
+}
+
+ul {
+  list-style: none; /* убрали маркеры (булиты)*/
+  margin: 0;  /*убрали отступы списков*/
+  padding: 0; /*убрали отступы списков*/
+}
+
+img {
+  max-width: 100%; /*максимальная ширина картинок, чтобы не вылезали за границы своих блоков родителей*/
+}
+
+/*стилизация касаема макета*/
+html {
+  font-family: sans-serif; /*заранее подъберем более подходящий шрифт*/
+}
+
+
+.conteiner {          
+  max-width: 1200px; /*ширина контейнера (была 1170 но добавили отступы справа и слева по 15)*/
+  margin-left: auto; /*для того чтобы наши контейнеры распологались по центру внутри своих родителей*/
+  margin-right: auto;
+  padding-right: 15px; /*отступ справа сайта влияет на ширину контейнера*/
+  padding-left: 15px;  /*отступ слева сайта влияет на ширину контейнера*/
+}
+
+.btn {
+  padding: 15px 16px; /*расстояние 15 по вертикали и 16 по горизонтали*/
+  font-size: 12px;   /*размер шрифта*/
+  line-height: 1; /*высота строки 1 внутри текста нет переноса текста*/
+  text-transform: uppercase; /*размер букв капс*/
+  color: white;    /*цвет шрифта*/
+  background-color: #3172b9; /*цвет обложки*/
+  border-radius: 4px; /*радиусы по краям 4*/
+  cursor: pointer; /*чтобы кнопка все равно работала, как кнопка для пользователя*/
+  display: inline-block; /*чтобы кнопка не наползала на текст*/
+}
+
+.text-center {
+  text-align: center; /*для размещения тескта в центре*/
+}
+
+.header { /*зададим высоту блока header как родительскому*/
+  height: 110px; /*высота блока будет работать только если в .header-conteiner пропишем height:100%*/
+}
+
+.header-conteiner {    /*специфическое поведение именно для этого контейнера исключая поведения для всех в контейнере*/
+  display: flex; /*элементы выстроились в одну строку*/
+  align-items: center; /*отцентрировать элементы*/
+  height: 100%;
+}
+.logo {
+  margin-right: auto; /*дали отступ справа для логотипа*/
+}
+
+/*стилизация навигации*/
+.nav-list {
+  display: flex; /*элементы выстроились в одну строку*/
+}
+.nav-item:not(:last-child) { /*для каждого элемента списка зададим отступ КРОМЕ ПОСЛЕДНЕГО*/
+  margin-right: 50px; /*отступ в 50px*/
+}
+
+.header-btn {
+  margin-left: 80px; /*отступ слева для кнопки FREE TRIAL*/
+}
+
+/*header*/
+
+
+/*hero*/  /*называют блок для привлечения внимания*/
+
+.hero-conteiner {
+  padding-top: 120px; /*отступ сверху*/
+  padding-bottom: 130px; /*отступ снизу*/
+}
+
+.hero-content {
+  max-width: 50%; /*ограничение по ширине текста (перенос текста)*/
+}
+
+.section-hero-heading {
+  margin-bottom: 20px; /*отступ снизу*/
+}
+
+.section-hero-description {
+  margin-bottom: 30px; /*отступ снизу*/
+}
+.section-hero-btn-description {
+  margin-top: 10px; /*отступ между кнпкой и описанием*/
+}
+
+
+
+/*What We Do*/
+
+.section-do {
+  padding-top: 140px; /*отступ сверху*/
+  padding-bottom: 100px; /*отступ снизу*/
+}
+.section-discription {
+  margin-top: 25px;
+}
+.section-do-list {
+  display: flex; /*размещение в ряд*/
+  margin-top: 50px;
+}
+
+.section-do-item {
+  flex: 1 1 25%; /*разрешили блоку сжиматься и расти*/
+  outline: 3px solid red; /*не меняет размера бордера для отображения*/
+}
+
+.section-do-item:not(:last-child) {
+  margin-right: 30px; /*отступ справа 30 между карточками*/
+}
+
+
+
+
+
+/*Our Happy Clients*/
+
+.section-clients {
+  padding-top: 90px;
+  padding-bottom: 100px;
+  outline: 3px solid red;
+}
+.section-clients-list {
+  display: flex;
+}
+
+.section-clients-item {
+  flex: 1 1 33.33%;
+}
+.section-clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.section-clients-user {
+  display: flex;
+  align-items: center;
+}
+
+.section-clients-avatar {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #548ac5;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+
+/*Contacts*/
+
+.section-contacts {
+  padding-top: 85px;
+  padding-bottom: 95px; 
+}
+.section-contacts-list {
+  display: flex;
+  margin-bottom: 43px;
+}
+.section-contacts-item{
+  flex: 1 1 33.33%; 
+}
+.section-contacts-info {
+  max-width: 250px;
+}
+.section-contacts-icon {
+  display: block; /*для того чтобы иконка занимала полностью всю строку, чтобы после нее был перенос всей строки*/
+  margin-bottom: 25px;
+  height: 26px; /*высота иконки*/
+  background-repeat: no-repeat; /*чтобы фоновое изображение не повторялось*/ 
+  background-position: center left; /*по верхнему левому краю по центру*/
+  background-size: auto 100%; /*первое значение отвичает за ширину второе за высоту (height:100%)*/
+  background-color: transparent; /*чтобы быть уверенным что все будет прозрачно*/
+}
+.section-contacts-icon-gps {
+  background-image: url('/img/gps.png');
+}
+.section-contacts-icon-phone {
+  background-image: url('/img/phone.png');
+}
+.section-contacts-icon-mail {
+  background-image: url('/img/mail.png');
+  background-size: auto 19px; /*ширина авто а высота 19*/
+}
+.section-contacts-heading {
+  display: block; /*маргин без инлайн блока не будет работать*/
+  margin-bottom: 40px;
+}
+
+/*Footer*/
+.footer {
+  height: 125px;
+}
+.footer-conteiner {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-left {
+  display: flex;
+  align-items: center;
+}
+.footer-logo {
+  margin-right: 25px; /*отступ справа от лого*/
+}
+.footer-nav-list {
+  display: flex;
+}
+.footer-nav-item:not(:last-child) {
+margin-right: 35px;
+}
